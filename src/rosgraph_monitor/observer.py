@@ -60,7 +60,10 @@ class ServiceObserver(Observer):
         self.name = service_name
         self.type = service_type
         self.client = None
-        self.start_service()
+        try:
+            self.start_service()
+        except:
+            print("{} service not started".format(self.name))
         super(ServiceObserver, self).__init__(name, loop_rate_hz)
 
     def start_service(self):
