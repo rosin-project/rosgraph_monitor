@@ -25,10 +25,9 @@ class SafetyQualityObserver(TopicObserver):
         # We assume a max acceleration of 1 m/s^2
         # The minimum value
 
-        d_break = (velocity)/(0.57)
+        d_break = (velocity)/(0.40)
 
         # print (d_break)
-
         normalized_safety = 0.0
 
         if (d_break > msgs[2].data):
@@ -36,7 +35,7 @@ class SafetyQualityObserver(TopicObserver):
 
         # print ("d_break: {0}".format(d_break))
         # print("disntace:{0}".format(msgs[2].data))
-        print("normalized safety:{0}".format(normalized_safety))
+        # print("normalized safety:{0}".format(normalized_safety))
         status_msg = DiagnosticStatus()
         status_msg.level = DiagnosticStatus.OK
         status_msg.name = self._id

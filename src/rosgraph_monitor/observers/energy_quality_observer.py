@@ -15,7 +15,7 @@ class EnergyQualityObserver(TopicObserver):
         status_msg = DiagnosticStatus()
 	
         attr =(msgs[0].data - 0.2)/(5.0-0.2) #normalized calue for energy
-        print("{0}".format(str(attr)))
+        #print("{0}".format(str(attr)))
 
         status_msg = DiagnosticStatus()
         status_msg.level = DiagnosticStatus.OK
